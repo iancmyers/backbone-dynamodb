@@ -15,7 +15,7 @@ _.mixin(require('underscore.deferred'));
 var endpoint, dynamoDB;
 
 if (process.env.DYNAMODB_HOST) {
-	 endpoint = new AWS.Endpoint(process.env.DYNAMODB_HOST);
+	 endpoint = process.env.DYNAMODB_HOST;
 }
 
 dynamoDB = endpoint ? new AWS.DynamoDB({endpoint: endpoint}) : new AWS.DynamoDB();
